@@ -1,0 +1,201 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: blanchedalmond;
+}
+h1{
+  text-align: center;
+  padding-top: 20px;
+  margin: 0;
+}
+hr{
+  width: 50%;
+  color: black;
+  border: 2px solid black;
+}
+.img-1{
+    position: absolute;
+    height: 350px;
+    width: 30%;
+    margin-left: 35%;
+    border-radius: 50% 50%;
+    border: 1px solid black;
+}
+.img-2{
+  background-color: none;
+  position: absolute;
+  width: 8%;
+  height: 180px;
+  left: 38%;
+  margin-top: 20px;
+  z-index: 99999;
+}
+.pinguino {
+    --pinguino-barriga: rgb(255, 255, 255);
+    --pinguino-pico: rgb(255, 255, 0);
+    position: relative;
+    margin-left: 41%;
+    display: block;
+    width: 300px;
+    height: 300px;
+    z-index: 100;
+  }
+  
+.pinguino-superior {
+  top: 10%;
+  left: 20%;
+  background: black;
+  width: 40%;
+  height: 45%;
+  border-radius: 70% 70% 60% 60%;
+}
+
+.pinguino-inferior {
+  top: 40%;
+  left: 24.5%;
+  background: black;
+  width: 30%;
+  height: 45%;
+  border-radius: 70% 70% 100% 100%;
+}
+
+.mano-derecha {
+  top: 0%;
+  left: -5%;
+  background: black;
+  width: 30%;
+  height: 60%;
+  border-radius: 30% 30% 120% 30%;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.mano-izquierda {
+  top: 0%;
+  left: 75%;
+  background: black;
+  width: 30%;
+  height: 60%;
+  border-radius: 30% 30% 30% 120%;
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+
+.mejilla-derecha {
+  top: 15%;
+  left: 35%;
+  background: var(--pinguino-barriga, white);
+  width: 60%;
+  height: 70%;
+  border-radius: 70% 70% 60% 60%;
+}
+
+.mejilla-izquierda {
+  top: 15%;
+  left: 5%;
+  background: var(--pinguino-barriga, white);
+  width: 60%;
+  height: 70%;
+  border-radius: 70% 70% 60% 60%;
+}
+
+.barriga {
+  top: 60%;
+  left: 22.5%;
+  background: var(--pinguino-barriga, white);
+  width: 53%;
+  height: 100%;
+  border-radius: 100% 100% 100% 100%;
+}
+
+.pie-derecho {
+  top: 85%;
+  left: 60%;
+  background: rgb(255, 255, 0);
+  width: 15%;
+  height: 30%;
+  border-radius: 50% 50% 50% 50%;
+  transform: rotate(-80deg);
+  z-index: -2222;
+  border: 1px solid black;
+}
+
+.pie-izquierdo {
+  top: 85%;
+  left: 25%;
+  background: rgb(255, 255, 0);
+  width: 15%;
+  height: 30%;
+  border-radius: 50% 50% 50% 50%;
+  transform: rotate(80deg);
+  z-index: -2222;
+  border: 1px solid black;
+}
+
+.ojo-derecho {
+  top: 45%;
+  left: 60%;
+  background: black;
+  width: 15%;
+  height: 17%;
+  border-radius: 50%;
+}
+
+.ojo-izquierdo {
+  top: 45%;
+  left: 25%;
+  background: black;
+  width: 15%;
+  height: 17%;
+  border-radius: 50%;
+}
+
+.reflejo-ojos {
+  top: 25%;
+  left: 15%;
+  background: white;
+  width: 35%;
+  height: 35%;
+  border-radius: 50%;
+}
+
+.color-mejilla-derecha {
+  top: 65%;
+  left: 15%;
+  background: rgb(248, 42, 77);
+  width: 15%;
+  height: 10%;
+  border-radius: 50%;
+}
+
+.color-mejilla-izquierda {
+  top: 65%;
+  left: 70%;
+  background: rgb(248, 42, 77);
+  width: 15%;
+  height: 10%;
+  border-radius: 50%;
+}
+
+.pico-superior {
+  top: 60%;
+  left: 40%;
+  background: var(--pinguino-pico, orange);
+  width: 20%;
+  height: 10%;
+  border-radius: 50%;
+}
+
+.pico-inferior {
+  top: 65%;
+  left: 42%;
+  background: var(--pinguino-pico, orange);
+  width: 16%;
+  height: 10%;
+  border-radius: 50%;
+}
+
+
+.pinguino * {
+  position: absolute;
+}
