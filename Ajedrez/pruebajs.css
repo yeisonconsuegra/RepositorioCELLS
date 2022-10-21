@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+}
+
+.celda {
+    height: 30px;
+    width: 30px;
+    border: 1.5px solid grey;
+    border-style: inset;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+.blanco {
+    background-color: black;
+}
+
+.negro {
+    background-color: white;
+}
