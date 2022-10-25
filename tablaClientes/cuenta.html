@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="prueba.css">
+    <title>Proyecto</title>
+</head>
+<body>
+    <label>Ingresa numero tu cuenta</label><br>
+    <input type="text" id="numcuenta"><br>
+    <label>Ingresa cantidad de dinero a la cuenta</label><br>
+    <input type="number" id="ingreso"><br>
+    <button id="btn1" onclick="ingresarDinero()">Ingresar</button><br>
+    <label>Ingresa cabtidad de dinero a retirar</label><br>
+    <input type="number" id="retiro"><br>
+    <button id="btn2" onclick="retirarDinero()">Retiro</button>
+</body>
+<script>
+    const ingresarDinero = () => {
+        let numCuenta = document.getElementById('numcuenta').value;
+        let b = JSON.parse(localStorage.getItem(numCuenta));
+        console.log(b);
+        let ingreso = document.getElementById('ingreso').value;
+        let saldoActual = b['cuenta']['saldo'];
+        let nuevoSaldo = saldoActual + Math.abs(ingreso);
+
+        b['cuenta']['saldo'] += nuevoSaldo;
+
+        localStorage.setItem(b['nombre'], JSON.stringify(b));
+
+    }
+
+
+    const retirarDinero = () => {
+        let numCuenta = document.getElementById('numcuenta').value;
+        let b = JSON.parse(localStorage.getItem(numCuenta));
+        console.log(b);
+        let retiro = document.getElementById('retiro').value;
+        let saldoActual = b['cuenta']['saldo'];
+
+
+
+        if (retiro <= saldoActual) {
+            let nuevoSaldo = saldoActual - Math.abs(retiro);
+            b['cuenta']['saldo'] = nuevoSaldo;
+            localStorage.setItem(b['nombre'], JSON.stringify(b));
+        } else {
+            alert("valor no disponible");
+        }
+
+
+    }
+</script>
+</html>

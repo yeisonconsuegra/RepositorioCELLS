@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="registroU.css">
+    <title>Proyecto</title>
+
+</head>
+
+<body>
+    <form id="formulario">
+        <label><b>Registro de usuario</b></label>
+        <p>Nombre:<br><input type="text" name="clave" id="nombre"></p>
+        <p>Apellido:<br><input type="text" name="text" id="apellido"></input></p>
+        <p>N° Cuenta:<br><input type="number" name="text" id="cuenta"></input></p>
+        <p>Contaseña de la Cuenta:<br><input type="password" name="text" id="contraseña"></input></p>
+        <p><input type="button" name="grabar" id="grabar" value="Enviar" onclick="mostrar()"></p>
+    </form>
+</body>
+<script>
+    registro = () => {
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const cuenta = document.getElementById('cuenta').value;
+    const contraseña = document.getElementById('contraseña').value;
+    let data = {
+        'nombre':nombre,
+        'apellido':apellido,
+        'cuenta':{
+            'numero':cuenta,
+            'saldo':0
+        },
+        'contraseña':contraseña
+    }
+    const formulario = document.getElementById("formulario");
+    formulario.style.display = 'none';
+    return new Promise((resolve, reject) => {
+        if (data['nombre'] !== "" && data['apellido'] !== "" && data['cuenta']['numero'] > 0 && data['contraseña'] !== "") {
+            localStorage.setItem(cuenta,JSON.stringify(data));
+            const formulario = document.getElementById('formulario');
+            const center = document.createElement('center');
+            const infor = document.createElement('span');
+            infor.innerHTML = "Registro exitoso!";
+            center.appendChild(infor);                    
+            resolve(document.body.appendChild(center));
+            window.location.href = "index.html";
+        } else {
+            const formulario = document.getElementById('formulario');
+            const center = document.createElement('center');
+            const infor = document.createElement('span');
+            infor.innerHTML = "Auch! hicistes algo mal";
+            center.appendChild(infor);
+            reject(document.body.appendChild(center));
+        }
+    });
+
+}
+
+mostrar = async() => {
+    let datos = await registro(); //promises
+}
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="prueba.css">
+    <title>Proyecto</title>
+</head>
+
+<body>
+    <form id="formulario">
+        <p>Numero de la cuenta:<br><input type="text" name="numero" id="numero"></p>
+        <p>contraseña:<br><input type="password" name="contraseña" id="contraseña"></input></p>
+        <p><input type="button" name="enviar" id="enviar" value="Enviar" onclick="ingreso()"></p>
+        <a href="registro.html">Crear Cuenta</a>
+    </form>
+</body>
+<script>
+    ingreso = () => {
+    const numero = document.getElementById('numero').value;
+    const contraseña = document.getElementById('contraseña').value;
+    let b = JSON.parse(localStorage.getItem(numero));
+    if (b['cuenta']['numero'] === numero && b['contraseña'] === contraseña) {
+        alert('inicio de sesión exitoso!');
+        window.location.href = "cuenta.html";
+    } else {
+        const formulario = document.getElementById('formulario');
+        const center = document.createElement('center');
+        const infor = document.createElement('span');
+        infor.innerHTML = "Datos incorrectos, Actualiza la pagina!";
+        center.appendChild(infor);
+        document.body.appendChild(center);
+    }
+}
+</script>
+</html>
