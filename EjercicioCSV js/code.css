@@ -1,0 +1,35 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+table, td, th {
+    border:1px solid black;
+}
+table {
+    border-collapse:collapse;
+    width:100%;
+}
+td, th {
+    padding:5px;
+}
+thead {
+    color:rgb(0, 128, 21);
+}
+tbody {
+    color:rgb(213, 13, 53);
+}
+label{
+    color: blue;
+}
+input{
+    color: green;
+    padding: 0em 0em 0em 1em;
+}
+select{
+    color: green;
+}
+#mafia{
+    border-radius: 20px;
+    border-color: transparent;
+    color: white;
+    background-color: rgb(14, 14, 255);
+}
