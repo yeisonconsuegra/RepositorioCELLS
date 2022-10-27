@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lit.dev</h1>
+
+    <!-- podemos duplicar este compoente en caso de que queramos un contador adicional -->
+    <eit-counter counter="20" id="counter"></eit-counter>
+    <button id="reset">Reset</button>
+    
+
+    <!-- usamos el componente -->
+    <script src="./componets/eit-counter.js" type="module"></script>
+    <script>
+        // esta funcion resete el valor del primer componente
+        document.getElementById('reset').addEventListener('click',function(){
+            document.getElementById('counter').counter = 0;
+
+
+            //tambien podemos crear un nuevo autoincrementador con todas las propiedades y colores que tiene el original
+            const counter = document.createElement('eit-counter'); 
+            //al momento de apretar el boton se agrega un componente nuevo con el valor del input a 1000
+            counter.setAttribute('quantity', 1000); 
+            document.body.appendChild(counter);
+        });
+    </script>
+</body>
+</html>
